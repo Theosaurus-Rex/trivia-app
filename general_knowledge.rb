@@ -1,18 +1,18 @@
 require 'httparty'
 require "tty-prompt"
 
-class ArtTrivia
+class GeneralKnowledgeTrivia
     include HTTParty
     base_uri 'opentdb.com/api.php?amount=10'
 
     def questions
-        self.class.get('&category=25&type=multiple')
+        self.class.get('&category=9&type=multiple')
     end
 end
 
-art_questions = ArtTrivia.new
+general_knowledge_questions = GeneralKnowledgeTrivia.new
 prompt = TTY::Prompt.new
-output = art_questions.questions
+output = general_knowledge_questions.questions
 output = output["results"]
 output.each do |q|
     puts q["question"]
@@ -22,12 +22,13 @@ output.each do |q|
     user_input = prompt.select("Select your answer:", answers)
     if user_input == q["correct_answer"]
         puts "Yes! You got it"
+        puts " "
+        puts " "
         next output
     else 
         puts "Oops, that was incorrect"
+        puts " "
+        puts " "
         next output
     end
 end
-    
-
-

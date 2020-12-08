@@ -2,9 +2,8 @@ require "tty-prompt"
 
 def welcome
     categories = [
-        {name: "Arts", value: 1},
-        {name: "Science", value: 2},
-        {name: "History", value: 3}
+        {name: "Art", value: 1},
+        {name: "General Knowledge", value: 2},
     ]
     prompt = TTY::Prompt.new
     intro = File.read('intro.txt')
