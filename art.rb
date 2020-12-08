@@ -10,6 +10,7 @@ class ArtTrivia
     end
 end
 
+def art_quiz
 art_questions = ArtTrivia.new
 prompt = TTY::Prompt.new
 output = art_questions.questions
@@ -32,6 +33,6 @@ output.each do |q|
         next output
     end
 end
-    
+end
 
 

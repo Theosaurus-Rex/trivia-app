@@ -10,6 +10,8 @@ class BooksTrivia
     end
 end
 
+
+def books_quiz
 books_questions = BooksTrivia.new
 prompt = TTY::Prompt.new
 output = books_questions.questions
@@ -31,4 +33,5 @@ output.each do |q|
         puts " "
         next output
     end
+end
 end

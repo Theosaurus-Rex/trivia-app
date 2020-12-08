@@ -9,7 +9,7 @@ class GeneralKnowledgeTrivia
         self.class.get('&category=9&type=multiple')
     end
 end
-
+def general_knowledge_quiz
 general_knowledge_questions = GeneralKnowledgeTrivia.new
 prompt = TTY::Prompt.new
 output = general_knowledge_questions.questions
@@ -31,4 +31,5 @@ output.each do |q|
         puts " "
         next output
     end
+end
 end
