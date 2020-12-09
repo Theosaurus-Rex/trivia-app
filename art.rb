@@ -33,6 +33,7 @@ output.each do |q|
         next output
     end
 end
+finish_quiz
 end
 
 
