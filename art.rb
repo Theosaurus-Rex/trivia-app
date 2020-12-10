@@ -6,6 +6,7 @@ class ArtTrivia
     include HTTParty
     base_uri 'opentdb.com/api.php?amount=10'
 
+    #Method to obtain questions from specific category
     def questions
         self.class.get('&category=25&type=multiple')
     end
@@ -16,8 +17,11 @@ art_questions = ArtTrivia.new
 prompt = TTY::Prompt.new
 output = art_questions.questions
 output = output["results"]
+p output
 output.each do |q|
-    puts q["question"]
+    question = q["question"]
+    question = question.gsub("&#039;", "'")
+    puts question
     answers = q["incorrect_answers"]
     answers << q["correct_answer"]
     answers = answers.shuffle
