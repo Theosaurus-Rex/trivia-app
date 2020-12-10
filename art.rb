@@ -25,6 +25,7 @@ output.each do |q|
     puts question
     answers = q["incorrect_answers"]
     answers << q["correct_answer"]
+    answers.each {|a| a.decode}
     answers = answers.shuffle
     user_input = prompt.select("Select your answer:", answers)
     if user_input == q["correct_answer"]
