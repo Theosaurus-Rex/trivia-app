@@ -1,5 +1,6 @@
 require 'httparty'
 require "tty-prompt"
+require 'htmlentities'
 
 class ArtTrivia
     include HTTParty
@@ -34,6 +35,10 @@ output.each do |q|
     end
 end
 finish_quiz
+
 end
+
+
+
 
 

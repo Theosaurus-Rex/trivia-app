@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    htmlentities (4.3.4)
     httparty (0.18.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -26,6 +27,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  htmlentities (~> 4.3)
   httparty (~> 0.18.1)
   tty-prompt (~> 0.22.0)
 
