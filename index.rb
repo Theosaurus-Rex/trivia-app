@@ -12,7 +12,7 @@ require"./boardgames"
 require "./nature"
 
 
-
+#Welcome message runs on startup
 def welcome
     pastel = Pastel.new
     intro = File.read('intro.txt')
@@ -20,9 +20,12 @@ def welcome
     puts ""
     puts ""
     puts pastel.cyan("Welcome to Terminal Trivia!")
+    puts ""
+    puts ""
     
 end
 
+#Main Game menu
 def main_menu
     pastel = Pastel.new
     menu_options = [
@@ -43,8 +46,11 @@ def main_menu
     end
 end
 
+#Start a new game
 def new_game
     pastel = Pastel.new
+    puts ""
+    puts ""
     puts pastel.cyan("Let's play! Please tell me your name:")
     input = gets.chomp
     $player = Player.new(input)
@@ -52,6 +58,7 @@ def new_game
     category_select
 end
 
+#Select a category
 def category_select
     categories = [
         {name: "Art", value: 1},
@@ -67,6 +74,8 @@ def category_select
     ]
     selection = TTY::Prompt.new
     pastel = Pastel.new
+    puts ""
+    puts ""
     puts pastel.cyan("Please select a category to get started!")
     user_choice = selection.select("Which category?", categories)
     case user_choice
@@ -96,6 +105,7 @@ def category_select
     end
 end
 
+#Read scoreboard when selecting scores from main menu
 def display_scores
     pastel = Pastel.new
     scores = File.read("scores.txt")
@@ -105,6 +115,7 @@ def display_scores
     main_menu
 end
 
+#Runs at end of quiz round
 def finish_quiz
     pastel = Pastel.new
     puts pastel.cyan("WelL done!")
