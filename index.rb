@@ -1,5 +1,7 @@
 require "tty-prompt"
+require "./player-class"
 require "./art"
+
 
 
 def welcome
@@ -32,8 +34,9 @@ end
 
 def new_game
     puts "Let's play! Please tell me your name:"
-    $name = gets.chomp
-    puts "Okay, thanks #{$name}! This will be used next to your scores on the score board."
+    input = gets.chomp
+    player = Player.new(input)
+    puts "Okay, thanks #{player.name}! This will be used next to your scores on the score board."
     category_select
 end
 
