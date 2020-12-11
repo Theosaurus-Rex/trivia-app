@@ -11,6 +11,32 @@ def welcome
     
 end
 
+def main_menu
+    menu_options = [
+        {name: "New Game", value: 1},
+        {name: "Score Board", value: 2},
+        {name: "Exit", value: 3}
+    ]
+    prompt = TTY::Prompt.new
+    user_input = prompt.select("Select an option:", menu_options)
+    case user_input
+    when 1
+        new_game
+    when 2
+        display_scores
+    when 3
+        puts "See you next time!"
+        exit(0)
+    end
+end
+
+def new_game
+    puts "Let's play! Please tell me your name:"
+    $name = gets.chomp
+    puts "Okay, thanks #{$name}! This will be used next to your scores on the score board."
+    category_select
+end
+
 def category_select
     categories = [
         {name: "Art", value: 1},
@@ -45,4 +71,5 @@ def finish_quiz
 end
 
 welcome
-category_select
+main_menu
+
