@@ -7,6 +7,7 @@ require "./film"
 require "./music"
 require "./theatre"
 require "./television"
+require "./games"
 
 
 
@@ -54,7 +55,8 @@ def category_select
         {name: "Film", value: 4},
         {name: "Music", value: 5},
         {name: "Theatre", value: 6},
-        {name: "Television", value: 7}
+        {name: "Television", value: 7},
+        {name: "Video Games", value: 8}
     ]
     selection = TTY::Prompt.new
     puts "Please select a category to get started!"
@@ -74,6 +76,8 @@ def category_select
         theatre_quiz
     when 7
         television_quiz
+    when 8
+        games_quiz
     else 
         puts "Error! Please select a category"
         category_select
@@ -93,6 +97,7 @@ def finish_quiz
     puts "You got #{$player.score} out of 10 answers correct!"
     scoreboard = File.open('scores.txt', 'a') do |f1| f1.write("\n#{$player.name} scored #{$player.score} / 10 in #{$category}")
     end
+    $player.score = 0
     puts " "
     puts " "
     new_game = [
