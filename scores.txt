@@ -12,3 +12,5 @@ Theo scored 1 / 10 in General Knowledge
 Theo scored 5 / 10 in Books
 Theo scored 6 / 10 in Film
 Theo scored 7 / 10 in Music
+Theo scored 1 / 10 in Theatre
+Theo scored 6 / 10 in Theatre
