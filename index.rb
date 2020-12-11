@@ -53,6 +53,14 @@ def category_select
     end
 end
 
+def display_scores
+    scores = File.read("scores.txt")
+    puts scores
+    puts "Press any key to return to Main Menu"
+    gets
+    main_menu
+end
+
 def finish_quiz
     puts "WelL done!"
     puts " "
@@ -66,7 +74,7 @@ def finish_quiz
     if user_input == 1
         category_select
     else
-        puts "See you next time!"
+        main_menu
     end
 end
 
