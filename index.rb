@@ -14,15 +14,17 @@ require "./nature"
 
 
 def welcome
+    pastel = Pastel.new
     intro = File.read('intro.txt')
-    puts intro
+    puts pastel.cyan(intro)
     puts ""
     puts ""
-    puts "Welcome to Terminal Trivia!"
+    puts pastel.cyan("Welcome to Terminal Trivia!")
     
 end
 
 def main_menu
+    pastel = Pastel.new
     menu_options = [
         {name: "New Game", value: 1},
         {name: "Score Board", value: 2},
@@ -36,16 +38,17 @@ def main_menu
     when 2
         display_scores
     when 3
-        puts "See you next time!"
+        puts pastel.cyan("See you next time!")
         exit(0)
     end
 end
 
 def new_game
-    puts "Let's play! Please tell me your name:"
+    pastel = Pastel.new
+    puts pastel.cyan("Let's play! Please tell me your name:")
     input = gets.chomp
     $player = Player.new(input)
-    puts "Okay, thanks #{$player.name}! This will be used next to your scores on the score board."
+    puts pastel.cyan("Okay, thanks #{$player.name}! This will be used next to your scores on the score board.")
     category_select
 end
 
@@ -63,7 +66,8 @@ def category_select
         {name: "Science & Nature", value: 10}
     ]
     selection = TTY::Prompt.new
-    puts "Please select a category to get started!"
+    pastel = Pastel.new
+    puts pastel.cyan("Please select a category to get started!")
     user_choice = selection.select("Which category?", categories)
     case user_choice
     when 1
@@ -87,22 +91,24 @@ def category_select
     when 10
         nature_quiz
     else 
-        puts "Error! Please select a category"
+        puts pastel.red("Error! Please select a category")
         category_select
     end
 end
 
 def display_scores
+    pastel = Pastel.new
     scores = File.read("scores.txt")
     puts scores
-    puts "Press any key to return to Main Menu"
+    puts pastel.cyan("Press any key to return to Main Menu")
     gets
     main_menu
 end
 
 def finish_quiz
-    puts "WelL done!"
-    puts "You got #{$player.score} out of 10 answers correct!"
+    pastel = Pastel.new
+    puts pastel.cyan("WelL done!")
+    puts pastel.cyan("You got #{$player.score} out of 10 answers correct!")
     scoreboard = File.open('scores.txt', 'a') do |f1| f1.write("\n#{$player.name} scored #{$player.score} / 10 in #{$category}")
     end
     $player.score = 0
