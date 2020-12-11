@@ -2,6 +2,8 @@ require 'httparty'
 require "tty-prompt"
 require "./decoder"
 
+
+
 class ArtTrivia
     include HTTParty
     base_uri 'opentdb.com/api.php?amount=10'
@@ -13,20 +15,20 @@ class ArtTrivia
 end
 
 def art_quiz
-include Decoder
-art_questions = ArtTrivia.new
-prompt = TTY::Prompt.new
-output = art_questions.questions
-output = output["results"]
-output.each do |q|
-    question = q["question"]
-    question = question.decode
-    puts question
-    answers = q["incorrect_answers"]
-    answers << q["correct_answer"]
-    answers = answers.map{|a| a.decode}
-    answers = answers.shuffle
-    user_input = prompt.select("Select your answer:", answers)
+    include Decoder
+    art_questions = ArtTrivia.new
+    prompt = TTY::Prompt.new
+    output = art_questions.questions
+    output = output["results"]
+    output.each do |q|
+        question = q["question"]
+        question = question.decode
+        puts question
+        answers = q["incorrect_answers"]
+        answers << q["correct_answer"]
+        answers = answers.map{|a| a.decode}
+            answers = answers.shuffle
+        user_input = prompt.select("Select your answer:", answers)
     if user_input == q["correct_answer"]
         puts "Yes! You got it"
         puts " "
@@ -39,8 +41,7 @@ output.each do |q|
         next output
     end
 end
-finish_quiz
-
+    finish_quiz
 end
 
 

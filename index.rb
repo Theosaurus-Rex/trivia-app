@@ -44,10 +44,10 @@ def category_select
     categories = [
         {name: "Art", value: 1},
     ]
-    prompt = TTY::Prompt.new
+    selection = TTY::Prompt.new
     puts "Please select a category to get started!"
-    user_input = prompt.select("Which category?", categories)
-    case user_input
+    user_choice = selection.select("Which category?", categories)
+    case user_choice
     when 1
         art_quiz
     else 
