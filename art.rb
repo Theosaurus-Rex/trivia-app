@@ -1,7 +1,7 @@
 require 'httparty'
 require "tty-prompt"
 require "./decoder"
-
+require "./player-class"
 
 
 class ArtTrivia
@@ -30,6 +30,7 @@ def art_quiz
             answers = answers.shuffle
         user_input = prompt.select("Select your answer:", answers)
     if user_input == q["correct_answer"]
+        $player.score += 1
         puts "Yes! You got it"
         puts " "
         puts " "
@@ -41,6 +42,7 @@ def art_quiz
         next output
     end
 end
+
     finish_quiz
 end
 

@@ -35,8 +35,8 @@ end
 def new_game
     puts "Let's play! Please tell me your name:"
     input = gets.chomp
-    player = Player.new(input)
-    puts "Okay, thanks #{player.name}! This will be used next to your scores on the score board."
+    $player = Player.new(input)
+    puts "Okay, thanks #{$player.name}! This will be used next to your scores on the score board."
     category_select
 end
 
