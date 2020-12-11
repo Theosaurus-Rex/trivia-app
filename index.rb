@@ -9,6 +9,7 @@ require "./theatre"
 require "./television"
 require "./games"
 require"./boardgames"
+require "./nature"
 
 
 
@@ -58,7 +59,8 @@ def category_select
         {name: "Theatre", value: 6},
         {name: "Television", value: 7},
         {name: "Video Games", value: 8},
-        {name: "Board Games", value: 9}
+        {name: "Board Games", value: 9},
+        {name: "Science & Nature", value: 10}
     ]
     selection = TTY::Prompt.new
     puts "Please select a category to get started!"
@@ -82,6 +84,8 @@ def category_select
         games_quiz
     when 9
         boardgames_quiz
+    when 10
+        nature_quiz
     else 
         puts "Error! Please select a category"
         category_select
