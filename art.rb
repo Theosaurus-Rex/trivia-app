@@ -16,6 +16,7 @@ end
 
 def art_quiz
     include Decoder
+    $category = "Art Trivia"
     art_questions = ArtTrivia.new
     prompt = TTY::Prompt.new
     output = art_questions.questions

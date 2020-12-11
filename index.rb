@@ -66,6 +66,9 @@ end
 
 def finish_quiz
     puts "WelL done!"
+    puts "You got #{$player.score} out of 10 answers correct!"
+    scoreboard = File.open('scores.txt', 'a') do |f1| f1.write("\n#{$player.name} scored #{$player.score} / 10 in #{$category}")
+    end
     puts " "
     puts " "
     new_game = [
