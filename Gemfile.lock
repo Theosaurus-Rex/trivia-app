@@ -27,7 +27,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  htmlentities (~> 4.3)
   httparty (~> 0.18.1)
   tty-prompt (~> 0.22.0)
 

@@ -1,5 +1,6 @@
 require 'httparty'
 require "tty-prompt"
+require "./decoder"
 
 class ArtTrivia
     include HTTParty
@@ -12,17 +13,18 @@ class ArtTrivia
 end
 
 def art_quiz
+include Decoder
 art_questions = ArtTrivia.new
 prompt = TTY::Prompt.new
 output = art_questions.questions
 output = output["results"]
-p output
 output.each do |q|
     question = q["question"]
-    question = question.gsub("&#039;", "'")
+    question = question.decode
     puts question
     answers = q["incorrect_answers"]
     answers << q["correct_answer"]
+    answers = answers.map{|a| a.decode}
     answers = answers.shuffle
     user_input = prompt.select("Select your answer:", answers)
     if user_input == q["correct_answer"]
