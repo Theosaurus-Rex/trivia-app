@@ -1,6 +1,7 @@
 require "tty-prompt"
 require "./player-class"
 require "./art"
+require "./general_knowledge"
 
 
 
@@ -43,6 +44,7 @@ end
 def category_select
     categories = [
         {name: "Art", value: 1},
+        {name: "General Knowledge", value: 2}
     ]
     selection = TTY::Prompt.new
     puts "Please select a category to get started!"
@@ -50,6 +52,8 @@ def category_select
     case user_choice
     when 1
         art_quiz
+    when 2
+        general_knowledge_quiz
     else 
         puts "Error! Please select a category"
         category_select

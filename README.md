@@ -43,7 +43,7 @@ Decoding is implemented using a custom module within the source code to replace 
 - Decoding encrypted output
 
 ### Score System
-To maintain consistency, the scoreboard will be stored in an external file that will be read and written to by the Trivia application. The scoreboard will contain the Player name, the category they picked, and their score for that category. Where scores are tied, the most recent score will be displayed at the top.
+To maintain consistency, the scoreboard will be stored in an external file that will be read and written to by the Trivia application. The scoreboard will contain the Player name, the category they picked, and their score for that category. The most recent score will be placed at the bottom of the list each time.
 
 **Checklist:**
 - Create document for score board storage
