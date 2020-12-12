@@ -25,6 +25,21 @@ def welcome
     
 end
 
+#Help Menu
+if ARGV[0] == "-h" || ARGV[0] == "--help"
+    pastel = Pastel.new
+    puts ""
+    puts ""
+    puts pastel.yellow("HELP MENU:")
+    puts pastel.yellow("-----------")
+    puts pastel.yellow("To begin a new game of trivia, please select New Game from the start menu.")
+    puts pastel.yellow("You will then be asked to select a category to answer ten questions from.")
+    puts pastel.yellow("Your score will be returned at the end of the 10 question round.")
+    puts pastel.yellow("To view scores from previous games, please select Score Board from the main menu.")
+    puts pastel.yellow("Use the Exit option from the main menu to end the application.")
+    puts pastel.yellow("Please select an option from the menu below")
+end
+
 #Main Game menu
 def main_menu
     pastel = Pastel.new
@@ -140,4 +155,5 @@ end
 
 welcome
 main_menu
+
 
