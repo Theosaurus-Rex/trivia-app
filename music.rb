@@ -24,7 +24,7 @@ def music_quiz
     output.each do |q|
         question = q["question"]
         question = question.decode
-        puts question
+        puts pastel.magenta(question)
         answers = q["incorrect_answers"]
         answers << q["correct_answer"]
         answers = answers.map{|a| a.decode}

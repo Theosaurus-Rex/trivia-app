@@ -16,6 +16,7 @@ end
 
 def art_quiz
     include Decoder
+    pastel = Pastel.new
     $category = "Art Trivia"
     art_questions = ArtTrivia.new
     prompt = TTY::Prompt.new
@@ -24,7 +25,7 @@ def art_quiz
     output.each do |q|
         question = q["question"]
         question = question.decode
-        puts question
+        puts pastel.magenta(question)
         answers = q["incorrect_answers"]
         answers << q["correct_answer"]
         answers = answers.map{|a| a.decode}
