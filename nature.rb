@@ -16,6 +16,7 @@ end
 
 def nature_quiz
     include Decoder
+    pastel = Pastel.new
     $category = "Science & Nature"
     nature_questions = NatureTrivia.new
     prompt = TTY::Prompt.new

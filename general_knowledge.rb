@@ -16,6 +16,7 @@ end
 
 def general_knowledge_quiz
     include Decoder
+    pastel = Pastel.new
     $category = "General Knowledge"
     general_knowledge_questions = GeneralKnowledgeTrivia.new
     prompt = TTY::Prompt.new

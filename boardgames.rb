@@ -16,6 +16,7 @@ end
 
 def boardgames_quiz
     include Decoder
+    pastel = Pastel.new
     $category = "Board Games"
     boardgames_questions = BoardgamesTrivia.new
     prompt = TTY::Prompt.new

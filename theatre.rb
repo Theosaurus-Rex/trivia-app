@@ -16,6 +16,7 @@ end
 
 def theatre_quiz
     include Decoder
+    pastel = Pastel.new
     $category = "Theatre"
     theatre_questions = TheatreTrivia.new
     prompt = TTY::Prompt.new

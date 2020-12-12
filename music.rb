@@ -16,6 +16,7 @@ end
 
 def music_quiz
     include Decoder
+    pastel = Pastel.new
     $category = "Music"
     music_questions = MusicTrivia.new
     prompt = TTY::Prompt.new
