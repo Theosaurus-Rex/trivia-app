@@ -10,7 +10,7 @@
 This game is aimed at ages 13+ due to the large amount of reading required. The application can be launched by running the `install-and-run.sh` file in the "src" folder.
 
 ### Features
-- **Categories:** More than twenty different themed categories for you to pick from! Includes specialty topics such as Mythology and Anime & Manga
+- **Categories:** Ten different themed categories for you to pick from! 
 - **Scoring System:** Record your scores with your name and category on the scoreboard to test yourself against your friends
 - **Intuitive Interface:** This app utilises *TTY-Prompt* to enable input selection with the arrow keys, so there's no need to type your answer selection!
 
@@ -20,7 +20,7 @@ Please note that this app may not function as intended in bash terminals due to 
 
 Users can use the command `-h` or `--h` to display a help menu for how to use the game.
 
-Users will be asked to enter their name when starting a new game so that their score can be recorded to the scoreboard. The scoreboard with high scores can be accessed from the Start menu. 
+Users will be asked to enter their name when starting a new game so that their score can be recorded to the scoreboard. The scoreboard can be accessed from the Start menu under the option 'Score Board'. 
 
 When answering questions or selecting a category, users can choose their input using the arrow keys on their keyboard. When this is an option, a text prompt will display to indicate how to interact with the various menus in-game.
 
@@ -62,6 +62,9 @@ The trivia application will utilise the Ruby Gem [TTY-Prompt](https://ttytoolkit
 - Create method for TTY Shell Command `--help`
 - Obtain user testing feedback on system interfacing
 - Test that interfacing works on question selection for each quiz category
+
+## Testing
+Testing for this app was conducted manually. Outcomes of testing and relevant revisions can be found [HERE](https://docs.google.com/spreadsheets/d/1QCGglflX-MNKs5fcIwE3dFARk7FxPZGeSLgFV54L5HU/edit?usp=sharing)
 
 
 
