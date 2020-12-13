@@ -11,3 +11,5 @@ gem "tty-prompt", "~> 0.22.0"
 gem "httparty", "~> 0.18.1"
 
 
+
+gem "rspec", "~> 3.10"
