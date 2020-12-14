@@ -15,6 +15,7 @@ require "./nature"
 #Welcome message runs on startup
 def welcome
     pastel = Pastel.new
+    system("clear")
     intro = File.read('intro.txt')
     puts pastel.cyan(intro)
     puts ""
@@ -63,6 +64,7 @@ end
 
 #Start a new game
 def new_game
+    system("clear")
     pastel = Pastel.new
     puts ""
     puts ""
@@ -75,6 +77,7 @@ end
 
 #Select a category
 def category_select
+    system("clear")
     categories = [
         {name: "Art", value: 1},
         {name: "General Knowledge", value: 2},
@@ -122,6 +125,7 @@ end
 
 #Read scoreboard when selecting scores from main menu
 def display_scores
+    system("clear")
     pastel = Pastel.new
     scores = File.read("scores.txt")
     puts scores
@@ -133,6 +137,7 @@ end
 #Runs at end of quiz round
 def finish_quiz
     pastel = Pastel.new
+    system("clear")
     puts pastel.cyan("WelL done!")
     puts pastel.cyan("You got #{$player.score} out of 10 answers correct!")
     scoreboard = File.open('scores.txt', 'a') do |f1| f1.write("\n#{$player.name} scored #{$player.score} / 10 in #{$category}")
