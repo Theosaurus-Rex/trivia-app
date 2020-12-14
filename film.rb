@@ -16,13 +16,15 @@ end
 
 def film_quiz
     include Decoder
-    puts "Retrieving questions..."
+    spinner = TTY::Spinner.new("[:spinner] Loading ...", format: :pulse_2)
+    spinner.auto_spin
     pastel = Pastel.new
     $category = "Film"
     film_questions = FilmTrivia.new
     prompt = TTY::Prompt.new
     output = film_questions.questions
     output = output["results"]
+    spinner.stop("Done!")
     output.each do |q|
         question = q["question"]
         question = question.decode

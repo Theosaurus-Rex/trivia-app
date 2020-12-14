@@ -1,5 +1,6 @@
 require 'httparty'
 require "tty-prompt"
+require "tty-spinner"
 require "./decoder"
 require "./player-class"
 
@@ -16,13 +17,15 @@ end
 
 def art_quiz
     include Decoder
-    puts "Retrieving questions..."
+    spinner = TTY::Spinner.new("[:spinner] Loading ...", format: :pulse_2)
+    spinner.auto_spin
     pastel = Pastel.new
     $category = "Art Trivia"
     art_questions = ArtTrivia.new
     prompt = TTY::Prompt.new
     output = art_questions.questions
     output = output["results"]
+    spinner.stop("Done!")
     output.each do |q|
         question = q["question"]
         question = question.decode
