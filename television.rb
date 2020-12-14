@@ -36,13 +36,11 @@ def television_quiz
         puts "Yes! You got it"
         puts " "
         puts " "
-        system("clear")
         next output
     else 
         puts "Oops, that was incorrect"
         puts " "
         puts " "
-        system("clear")
         next output
     end
 end
