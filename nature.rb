@@ -16,6 +16,7 @@ end
 
 def nature_quiz
     include Decoder
+    puts "Retrieving questions..."
     pastel = Pastel.new
     $category = "Science & Nature"
     nature_questions = NatureTrivia.new

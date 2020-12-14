@@ -16,6 +16,7 @@ end
 
 def art_quiz
     include Decoder
+    puts "Retrieving questions..."
     pastel = Pastel.new
     $category = "Art Trivia"
     art_questions = ArtTrivia.new
@@ -36,13 +37,11 @@ def art_quiz
         puts "Yes! You got it"
         puts " "
         puts " "
-        system("clear")
         next output
     else 
         puts "Oops, that was incorrect"
         puts " "
         puts " "
-        system("clear")
         next output
     end
 end

@@ -16,6 +16,7 @@ end
 
 def general_knowledge_quiz
     include Decoder
+    puts "Retrieving questions..."
     pastel = Pastel.new
     $category = "General Knowledge"
     general_knowledge_questions = GeneralKnowledgeTrivia.new

@@ -16,6 +16,7 @@ end
 
 def games_quiz
     include Decoder
+    puts "Retrieving questions..."
     pastel = Pastel.new
     $category = "Video Games"
     games_questions = GamesTrivia.new
