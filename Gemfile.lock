@@ -24,6 +24,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.0)
+    rubyscript2exe (0.5.3)
     tty-color (0.6.0)
     tty-cursor (0.7.1)
     tty-prompt (0.22.0)
