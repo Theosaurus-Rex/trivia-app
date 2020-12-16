@@ -38,7 +38,7 @@ if ARGV[0] == "-h" || ARGV[0] == "--help"
     puts pastel.yellow("Your score will be returned at the end of the 10 question round.")
     puts pastel.yellow("To view scores from previous games, please select Score Board from the main menu.")
     puts pastel.yellow("Use the Exit option from the main menu to end the application.")
-    puts pastel.yellow("Please select an option from the menu below")
+    exit(0)
 end
 
 #Main Game menu
