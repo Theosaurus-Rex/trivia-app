@@ -15,3 +15,5 @@ gem "httparty", "~> 0.18.1"
 gem "rspec", "~> 3.10"
 
 gem "tty-spinner", "~> 0.9.3"
+
+gem "tty-font", "~> 0.5.0"

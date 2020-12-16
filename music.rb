@@ -1,5 +1,6 @@
 require 'httparty'
 require "tty-prompt"
+require "tty-prompt"
 require "./decoder"
 require "./player-class"
 
@@ -25,6 +26,8 @@ def music_quiz
     output = music_questions.questions
     output = output["results"]
     spinner.stop("Done!")
+    font = TTY::Font.new(:straight)
+    puts font.write("MUSIC")
     output.each do |q|
         question = q["question"]
         question = question.decode

@@ -3,6 +3,7 @@ require "tty-prompt"
 require "tty-spinner"
 require "./decoder"
 require "./player-class"
+require "tty-font"
 
 
 class ArtTrivia
@@ -26,6 +27,8 @@ def art_quiz
     output = art_questions.questions
     output = output["results"]
     spinner.stop("Done!")
+    font = TTY::Font.new(:straight)
+    puts font.write("ART")
     output.each do |q|
         question = q["question"]
         question = question.decode
