@@ -11,12 +11,12 @@ This game is aimed at ages 13+ due to the large amount of reading required. The 
 
 ### Features
 - **Categories:** Ten different themed categories for you to pick from! 
-- **Scoring System:** Record your scores with your name and category on the scoreboard to test yourself against your friends
+- **Scoring System:** Record your scores with your name and category on the scoreboard to test yourself against your friends or watch yourself improve over time!
 - **Intuitive Interface:** This app utilises *TTY-Prompt* to enable input selection with the arrow keys, so there's no need to type your answer selection!
 
 ### Installation & Use
 To install and run, download the provided files and run `install-and-run.sh` to play!
-Please note that this app may not function as intended in bash terminals due to the reliance on tty-prompt for answer selection.
+Please note that this app may not function as intended in bash terminals due to the reliance on tty-prompt for answer selection. An internet connection is also required to play due to the use of an API.
 
 Users can use the command `-h` or `--h` to display a help menu for how to use the game.
 
@@ -66,7 +66,33 @@ The trivia application will utilise the Ruby Gem [TTY-Prompt](https://ttytoolkit
 - Test that interfacing works on question selection for each quiz category (Priority: High)
 
 ## Testing
-Testing for this app was conducted manually. Outcomes of testing and relevant revisions can be found [HERE](https://docs.google.com/spreadsheets/d/1QCGglflX-MNKs5fcIwE3dFARk7FxPZGeSLgFV54L5HU/edit?usp=sharing)
+Testing for this app was conducted through a combination of rspec automated testing for the player class, and manual testing for encoding issues. Outcomes of manual testing and relevant revisions can be found [HERE](https://docs.google.com/spreadsheets/d/1QCGglflX-MNKs5fcIwE3dFARk7FxPZGeSLgFV54L5HU/edit?usp=sharing)
+
+![Test table](./docs/test-table.png)
+
+
+## Help
+### **How do I run the app?**
+To use the app, download the files from Github and run `bash install-and-run.sh`. This will install bundler which in turn will install the required ruby gems to play the trivia game, and will then launch the game itself.
+
+### **Do I need anything special to run the app?**
+Due to the use of TTY-Prompt, this app runs best in *zsh* terminals, which you can find [HERE](https://ohmyz.sh/). Zsh is fantastic to have either way.
+As far as dependencies go, the required gems will be installed automatically when you run `install-and-run.sh` (see above)
+
+### **Why can't I see the correct answers?**
+This program was created with replayability in mind. To achieve this, correct answers are hidden when a wrong answer is selected. Keep practicing and you'll get there! ;)
+
+### **My scoreboard is getting full! Can I clear it?**
+Yep! Just head into the `scores.txt` file and erase scores you're not happy with. Don't cheat and write fake scores in there though. You'll know you didn't *really* earn them.
+
+### **How can I find instructions for the game?**
+It's a pretty straightforward app, but running `ruby index.rb -h` or `ruby index.rb --help` will pull up a nifty little help menu!
+
+### **One of your questions/answers has a spelling mistake! You should really fix that.**
+Unfortunately I don't have direct control over the questions, as they are retrieved from the [Open Trivia Database](https://opentdb.com/). Sorry!
+
+### **Your program has a bug that keeps saying my answers are wrong! >:(**
+Nice try.
 
 
 
