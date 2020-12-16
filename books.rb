@@ -17,7 +17,7 @@ end
 
 def books_quiz
     include Decoder
-    pspinner = TTY::Spinner.new("[:spinner] Loading ...", format: :pulse_2)
+    spinner = TTY::Spinner.new("[:spinner] Loading ...", format: :pulse_2)
     spinner.auto_spin
     pastel = Pastel.new
     $category = "Books"
